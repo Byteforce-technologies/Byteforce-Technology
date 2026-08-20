@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-primary: #0066ff;
+    --brand-cyan: #00d2ff;
+    --brand-navy: #060a17;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-brand-slate-900 font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #0066ff;
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #00d2ff 0%, #0066ff 70%, #0052d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, #00d2ff 0%, #0066ff 60%, #0052d4 100%);
+  }
+
+  .bg-gradient-cta {
+    background: linear-gradient(105deg, #0052d4 0%, #0066ff 50%, #00a3ff 100%);
+  }
+
+  .bg-navy-gradient {
+    background: linear-gradient(180deg, #060a17 0%, #0a1026 50%, #0e1738 100%);
+  }
+
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+  }
+
+  .bg-grid-pattern-dark {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+}
