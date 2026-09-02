@@ -1,5 +1,5 @@
 /**
- * ByteForce Africa - Solutions Data Layer
+ * ByteForce Global - Solutions Data Layer
  * Detailed specifications for all 5 industry solution verticals
  */
 

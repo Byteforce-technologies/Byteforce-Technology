@@ -1,5 +1,5 @@
 /**
- * ByteForce Africa - Services Data Layer
+ * ByteForce Global - Services Data Layer
  * Detailed specifications for all 5 core service offerings
  */
 

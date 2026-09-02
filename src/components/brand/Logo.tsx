@@ -29,7 +29,7 @@ export function Logo({
       <div className="relative flex-shrink-0 transition-transform duration-200 group-hover:scale-105">
         <Image
           src="/brand-logo-mark.png"
-          alt="ByteForce Africa Logo"
+          alt="ByteForce Global Logo"
           width={currentSize.img}
           height={currentSize.img}
           className="object-contain"
@@ -53,7 +53,7 @@ export function Logo({
             theme === "dark" ? "text-brand-slate-400" : "text-brand-slate-500"
           )}
         >
-          Africa
+          Global
         </span>
       </div>
     </div>
@@ -61,7 +61,7 @@ export function Logo({
 
   if (asLink) {
     return (
-      <Link href="/" aria-label="ByteForce Africa Home">
+      <Link href="/" aria-label="ByteForce Global Home">
         {content}
       </Link>
     );

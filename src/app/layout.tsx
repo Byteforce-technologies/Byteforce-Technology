@@ -11,15 +11,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://byteforce.africa"),
+  metadataBase: new URL("https://byteforce.global"),
   title: {
-    default: "ByteForce Africa — Technology Built for Africa's Next Chapter",
-    template: "%s | ByteForce Africa",
+    default: "ByteForce Global — Technology Built for Africa's Next Chapter",
+    template: "%s | ByteForce Global",
   },
   description:
     "We build technology that drives efficiency, growth and impact for businesses across Africa and beyond. Custom software engineering, AI & intelligent systems, data ecosystems, and cloud solutions.",
   keywords: [
-    "ByteForce Africa",
+    "ByteForce Global",
+    "ByteForce",
     "Software Engineering Africa",
     "AI Africa",
     "Data & Analytics Ghana",
@@ -27,23 +28,23 @@ export const metadata: Metadata = {
     "FinTech Solutions",
     "Supply Chain Technology",
   ],
-  authors: [{ name: "ByteForce Africa" }],
+  authors: [{ name: "ByteForce Global" }],
   icons: {
     icon: "/brand-logo-mark.png",
     apple: "/brand-logo-mark.png",
   },
   openGraph: {
-    title: "ByteForce Africa — Technology Built for Africa's Next Chapter",
+    title: "ByteForce Global — Technology Built for Africa's Next Chapter",
     description:
       "We build technology that drives efficiency, growth and impact for businesses across Africa and beyond.",
-    url: "https://byteforce.africa",
-    siteName: "ByteForce Africa",
+    url: "https://byteforce.global",
+    siteName: "ByteForce Global",
     images: [
       {
         url: "/brand-logo-mark.png",
         width: 800,
         height: 800,
-        alt: "ByteForce Africa Logo",
+        alt: "ByteForce Global Logo",
       },
     ],
     locale: "en_US",

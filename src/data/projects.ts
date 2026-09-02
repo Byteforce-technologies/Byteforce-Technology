@@ -1,5 +1,5 @@
 /**
- * ByteForce Africa - Projects & Case Studies (Canonical Data Source)
+ * ByteForce Global - Projects & Case Studies (Canonical Data Source)
  * 
  * This is the SINGLE SOURCE OF TRUTH for case study names, statistics,
  * industries, and descriptions referenced across Home, Services, Solutions, and Work pages.

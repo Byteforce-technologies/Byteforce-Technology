@@ -1,5 +1,5 @@
 /**
- * ByteForce Africa - Leadership & Team Data Layer
+ * ByteForce Global - Leadership & Team Data Layer
  * 
  * PLACEHOLDER CONTENT — replace with real team before launch
  * This file serves client-presentation purposes to showcase the team grid on the About page.

@@ -25,7 +25,7 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    q: "What is ByteForce Africa's typical project timeline?",
+    q: "What is ByteForce Global's typical project timeline?",
     a: "Timelines depend on the scope and complexity. Rapid prototypes and MVP platforms typically take 4 to 8 weeks, while full enterprise solutions or core banking integrations range from 3 to 6 months in phased agile milestones.",
   },
   {
@@ -142,10 +142,10 @@ export default function ContactPage() {
                 General inquiries & proposals:
               </p>
               <a
-                href="mailto:hello@byteforce.africa"
+                href="mailto:hello@byteforce.global"
                 className="text-xs font-bold text-brand-blue-600 hover:underline block"
               >
-                hello@byteforce.africa
+                hello@byteforce.global
               </a>
             </div>
 

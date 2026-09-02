@@ -7,8 +7,8 @@ import { TwoToneHeading } from "@/components/ui/TwoToneHeading";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — ByteForce Africa",
-  description: "Privacy Policy and data protection commitments for ByteForce Africa.",
+  title: "Privacy Policy — ByteForce Global",
+  description: "Privacy Policy and data protection commitments for ByteForce Global.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="text-xl font-bold text-brand-slate-900 pt-2">1. Information We Collect</h2>
             <p>
-              ByteForce Africa (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) collects information that you provide directly to us when contacting us via our website forms, subscribing to publications, or communicating regarding software engineering services. This may include your name, business email address, company name, and project requirements.
+              ByteForce Global (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) collects information that you provide directly to us when contacting us via our website forms, subscribing to publications, or communicating regarding software engineering services. This may include your name, business email address, company name, and project requirements.
             </p>
 
             <h2 className="text-xl font-bold text-brand-slate-900 pt-2">2. How We Use Your Information</h2>
@@ -49,8 +49,8 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-bold text-brand-slate-900 pt-2">4. Contact Us</h2>
             <p>
               If you have any questions regarding this Privacy Policy, please contact our data privacy officer at{" "}
-              <a href="mailto:hello@byteforce.africa" className="text-brand-blue-600 font-semibold underline">
-                hello@byteforce.africa
+              <a href="mailto:hello@byteforce.global" className="text-brand-blue-600 font-semibold underline">
+                hello@byteforce.global
               </a>
               .
             </p>

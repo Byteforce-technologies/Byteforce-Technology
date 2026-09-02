@@ -1,5 +1,5 @@
 /**
- * ByteForce Africa - Insights & Articles Data Layer
+ * ByteForce Global - Insights & Articles Data Layer
  * 
  * PLACEHOLDER CONTENT — replace with real articles/authors before launch
  * This file serves client-presentation purposes to showcase blog layout and filtering capabilities.

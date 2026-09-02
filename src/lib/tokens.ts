@@ -1,5 +1,5 @@
 /**
- * ByteForce Africa Design System Tokens
+ * ByteForce Global Design System Tokens
  * Source of truth for Colors, Typography, Gradients, and Elevation
  */
 
@@ -37,12 +37,12 @@ export const colors = {
 
 export const typography = {
   eyebrow: "text-xs font-semibold uppercase tracking-widest text-brand-blue-600",
-  heroH1: "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-slate-900 leading-[1.1]",
-  sectionH2: "text-3xl sm:text-4xl font-bold tracking-tight text-brand-slate-900 leading-[1.2]",
-  cardH3: "text-xl font-bold text-brand-slate-900 tracking-tight",
-  bodyLarge: "text-lg text-brand-slate-600 leading-relaxed",
-  bodyBase: "text-base text-brand-slate-600 leading-relaxed",
-  bodySmall: "text-sm text-brand-slate-500 leading-normal",
+  heroH1: "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-slate-900 leading-[1.12]",
+  sectionH2: "text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight text-brand-slate-900 leading-[1.2]",
+  cardH3: "text-lg sm:text-xl font-bold text-brand-slate-900 tracking-tight",
+  bodyLarge: "text-base sm:text-lg text-brand-slate-600 leading-relaxed",
+  bodyBase: "text-sm sm:text-base text-brand-slate-600 leading-relaxed",
+  bodySmall: "text-xs sm:text-sm text-brand-slate-500 leading-normal",
 } as const;
 
 export const containers = {

@@ -47,10 +47,10 @@ export function generateMetadata({ params }: ServicePageProps): Metadata {
   }
 
   return {
-    title: `${service.name} — ByteForce Africa Services`,
+    title: `${service.name} — ByteForce Global Services`,
     description: service.shortDescription,
     openGraph: {
-      title: `${service.name} | ByteForce Africa`,
+      title: `${service.name} | ByteForce Global`,
       description: service.heroDescription,
     },
   };
@@ -105,11 +105,11 @@ export default function SingleServicePage({ params }: ServicePageProps) {
                 <span>SERVICE // {service.number}</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.12]">
                 {service.name}
               </h1>
 
-              <p className="text-base sm:text-lg text-brand-slate-300 leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-base text-brand-slate-300 leading-relaxed max-w-2xl">
                 {service.heroDescription}
               </p>
 

@@ -7,8 +7,8 @@ import { TwoToneHeading } from "@/components/ui/TwoToneHeading";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — ByteForce Africa",
-  description: "Terms of Service and commercial engagement standards for ByteForce Africa.",
+  title: "Terms of Service — ByteForce Global",
+  description: "Terms of Service and commercial engagement standards for ByteForce Global.",
 };
 
 export default function TermsOfServicePage() {
@@ -33,17 +33,17 @@ export default function TermsOfServicePage() {
 
             <h2 className="text-xl font-bold text-brand-slate-900 pt-2">1. Agreement to Terms</h2>
             <p>
-              By accessing our website or engaging ByteForce Africa for engineering services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services or website.
+              By accessing our website or engaging ByteForce Global for engineering services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services or website.
             </p>
 
             <h2 className="text-xl font-bold text-brand-slate-900 pt-2">2. Intellectual Property Rights</h2>
             <p>
-              All trademarks, logos, service marks, and interface designs on this website are the proprietary property of ByteForce Africa. Bespoke client deliverables, codebase repositories, and architectural assets are transferred to clients per the explicit terms in their respective executed Master Services Agreement.
+              All trademarks, logos, service marks, and interface designs on this website are the proprietary property of ByteForce Global. Bespoke client deliverables, codebase repositories, and architectural assets are transferred to clients per the explicit terms in their respective executed Master Services Agreement.
             </p>
 
             <h2 className="text-xl font-bold text-brand-slate-900 pt-2">3. Limitation of Liability</h2>
             <p>
-              ByteForce Africa shall not be liable for indirect, incidental, special, or consequential damages resulting from the use or inability to use this website or third-party services linked from this platform.
+              ByteForce Global shall not be liable for indirect, incidental, special, or consequential damages resulting from the use or inability to use this website or third-party services linked from this platform.
             </p>
 
             <h2 className="text-xl font-bold text-brand-slate-900 pt-2">4. Governing Law</h2>

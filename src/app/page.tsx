@@ -1,92 +1,152 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { 
-  Code2, 
-  Sparkles, 
-  BarChart3, 
-  Layers, 
-  ArrowRight, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Users, 
-  Rocket, 
-  Globe2, 
-  TrendingUp, 
-  Cpu
+import {
+  Code2,
+  Sparkles,
+  BarChart3,
+  Layers,
+  ArrowRight,
+  ArrowUpRight,
+  CheckCircle2,
+  ShieldCheck,
+  Users,
+  Building2,
+  Globe2,
+  TrendingUp,
+  Cpu,
+  Workflow,
+  Zap,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { TwoToneHeading } from "@/components/ui/TwoToneHeading";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { InteractiveHeroGlobe } from "@/components/brand/InteractiveHeroGlobe";
 import { CtaBanner } from "@/components/sections/CtaBanner";
-import { services } from "@/data/services";
-import { getFeaturedProjects, Project } from "@/data/projects";
+import { getFeaturedProjects } from "@/data/projects";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "ByteForce Africa — Technology Built for Africa's Next Chapter",
+  title: "ByteForce Global — Technology Built for Africa's Next Chapter",
   description:
     "We build technology that drives efficiency, growth and impact for businesses across Africa and beyond. Custom software engineering, AI & intelligent systems, data ecosystems, and cloud solutions.",
 };
 
 const whatWeDoCards = [
   {
-    number: "01",
+    slug: "software-engineering",
     title: "Software Engineering",
-    description: "Custom web, mobile and enterprise systems that are secure, scalable and built to solve real business problems.",
+    description:
+      "Custom software solutions that are secure, scalable and built to solve real business problems.",
     icon: Code2,
     href: "/services/software-engineering",
-    capabilities: ["Web Applications", "Enterprise Systems", "APIs & Integrations", "SaaS Platforms"],
   },
   {
-    number: "02",
+    slug: "ai-intelligent-systems",
     title: "AI & Intelligent Systems",
-    description: "We harness AI and machine learning to unlock insights, automate processes and create intelligent solutions.",
-    icon: Sparkles,
+    description:
+      "We harness AI and machine learning to unlock insights, automate processes and create intelligent solutions.",
+    icon: BrainCircuitIcon,
     href: "/services/ai-intelligent-systems",
-    capabilities: ["Machine Learning", "NLP & Chatbots", "Process Automation", "Computer Vision"],
   },
   {
-    number: "03",
+    slug: "data-analytics",
     title: "Data & Analytics",
-    description: "Transform your data into actionable insights that drive growth and improve executive decision-making.",
+    description:
+      "Transform your data into actionable insights that drive growth and improve decision-making.",
     icon: BarChart3,
     href: "/services/data-analytics",
-    capabilities: ["Data Warehousing", "Business Intelligence", "ETL Pipelines", "Real-Time Dashboards"],
   },
   {
-    number: "04",
+    slug: "digital-transformation",
     title: "Digital Transformation",
-    description: "Modernize your operations and build future-ready organizations with digital strategies and cloud solutions.",
-    icon: Layers,
+    description:
+      "Modernize your operations and build future-ready organizations with digital strategies and solutions.",
+    icon: Workflow,
     href: "/services/digital-transformation",
-    capabilities: ["Legacy Modernization", "Workflow Automation", "Cloud Strategy", "Change Enablement"],
   },
 ];
+
+function BrainCircuitIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+      <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+      <path d="M12 5v13" />
+      <path d="m9 9 3 3" />
+      <path d="m15 9-3 3" />
+      <path d="m9 15 3-3" />
+      <path d="m15 15-3-3" />
+    </svg>
+  );
+}
 
 const processSteps = [
   {
     step: "01",
     title: "Idea & Strategy",
-    description: "We dissect your core business model, assess technical feasibility, and blueprint a scalable architecture.",
+    icon: Sparkles,
+    description:
+      "We help you define the right problem to solve and blueprint a scalable architecture.",
   },
   {
     step: "02",
     title: "Design & Engineer",
-    description: "Iterative agile development with clean TypeScript code, modern frameworks, and strict security standards.",
+    icon: Code2,
+    description:
+      "We design and build intelligent, production-grade systems with modern standards.",
   },
   {
     step: "03",
     title: "Deploy & Integrate",
-    description: "Automated CI/CD deployment, live telemetry, and seamless integration with existing payment rails and databases.",
+    icon: Workflow,
+    description:
+      "We integrate seamlessly into your ecosystem with live telemetry and CI/CD pipelines.",
   },
   {
     step: "04",
     title: "Scale & Optimize",
-    description: "Continuous performance profiling, 24/7 reliability engineering, and feature expansion as your business grows.",
+    icon: Zap,
+    description:
+      "We monitor, iterate and help you scale reliably as business volume accelerates.",
+  },
+];
+
+const whyByteforceValues = [
+  {
+    icon: ShieldCheck,
+    title: "Business First",
+    description:
+      "We start by understanding your business goals and operational constraints.",
+  },
+  {
+    icon: Building2,
+    title: "Built to Last",
+    description:
+      "We engineer secure, scalable, and future-ready digital systems.",
+  },
+  {
+    icon: Users,
+    title: "Collaborative",
+    description:
+      "We work as a dedicated extension of your leadership and technical team.",
+  },
+  {
+    icon: Globe2,
+    title: "Impact Driven",
+    description:
+      "Your measurable business success and efficiency is the yardstick of our work.",
   },
 ];
 
@@ -94,14 +154,14 @@ export default function HomePage() {
   const featuredProjects = getFeaturedProjects().slice(0, 2);
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16 overflow-hidden">
-      {/* 1. Hero Section */}
-      <section className="relative pt-10 sm:pt-16 pb-12 sm:pb-20 bg-gradient-to-b from-brand-slate-50/80 via-white to-white overflow-hidden">
+    <div className="space-y-12 sm:space-y-16 pb-12 overflow-hidden">
+      {/* 1. Hero Section (UNTOUCHED / Kept with pulsing circle + logo animation per Section 2) */}
+      <section className="relative pt-10 sm:pt-16 pb-12 sm:pb-16 bg-gradient-to-b from-brand-slate-50/80 via-white to-white overflow-hidden">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Left Hero Content (7 cols) */}
-            <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
-              <Eyebrow>EMPOWERING AFRICAN ENTERPRISES</Eyebrow>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+            {/* Left Hero Content */}
+            <div className="lg:col-span-7 space-y-5 text-left">
+              <Eyebrow>BYTEFORCE GLOBAL</Eyebrow>
 
               <TwoToneHeading
                 as="h1"
@@ -109,43 +169,44 @@ export default function HomePage() {
                 highlightText="chapter."
               />
 
-              <p className="text-lg sm:text-xl text-brand-slate-600 leading-relaxed max-w-2xl">
-                We engineer high-leverage software, intelligent AI systems, and scalable data infrastructure that empower businesses to lead across Africa and beyond.
+              <p className="text-base sm:text-lg text-brand-slate-600 leading-relaxed max-w-xl">
+                We design and build digital solutions that help businesses
+                operate smarter, scale faster, and compete globally.
               </p>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <Button href="/contact" variant="primary" size="lg" showArrow>
+              <div className="pt-2 flex flex-wrap items-center gap-3.5">
+                <Button href="/contact" variant="primary" size="md" showArrow>
                   Start a Project
                 </Button>
-                <Button href="/solutions" variant="secondary" size="lg">
+                <Button href="/solutions" variant="secondary" size="md">
                   Explore Solutions
                 </Button>
               </div>
 
               {/* Trust Badge & Avatar Row */}
-              <div className="pt-4 border-t border-brand-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <div className="flex -space-x-2">
-                  <div className="w-9 h-9 rounded-full bg-brand-blue-600 text-white font-mono font-bold text-xs flex items-center justify-center ring-2 ring-white">
-                    BF
-                  </div>
-                  <div className="w-9 h-9 rounded-full bg-brand-cyan-500 text-white font-mono font-bold text-xs flex items-center justify-center ring-2 ring-white">
-                    AI
-                  </div>
-                  <div className="w-9 h-9 rounded-full bg-brand-navy-950 text-white font-mono font-bold text-xs flex items-center justify-center ring-2 ring-white">
-                    GH
-                  </div>
-                  <div className="w-9 h-9 rounded-full bg-brand-slate-700 text-white font-mono font-bold text-xs flex items-center justify-center ring-2 ring-white">
-                    +20
-                  </div>
+              <div className="pt-4 border-t border-brand-slate-200/80 flex items-center gap-3.5">
+                <div className="flex -space-x-1.5">
+                  <span className="w-7 h-7 rounded-full bg-brand-navy-950 text-white font-mono font-bold text-[10px] flex items-center justify-center border-2 border-white">
+                    EM
+                  </span>
+                  <span className="w-7 h-7 rounded-full bg-brand-blue-600 text-white font-mono font-bold text-[10px] flex items-center justify-center border-2 border-white">
+                    AA
+                  </span>
+                  <span className="w-7 h-7 rounded-full bg-brand-cyan-500 text-white font-mono font-bold text-[10px] flex items-center justify-center border-2 border-white">
+                    KB
+                  </span>
+                  <span className="w-7 h-7 rounded-full bg-brand-slate-700 text-white font-mono font-bold text-[10px] flex items-center justify-center border-2 border-white">
+                    NS
+                  </span>
                 </div>
-                <p className="text-xs sm:text-sm font-medium text-brand-slate-600">
+                <p className="text-xs font-medium text-brand-slate-600">
                   Trusted by forward-thinking businesses across Africa
                 </p>
               </div>
             </div>
 
-            {/* Right Interactive Globe Hero Graphic (5 cols) */}
+            {/* Right Interactive Globe Hero Graphic */}
             <div className="lg:col-span-5 flex items-center justify-center">
               <InteractiveHeroGlobe />
             </div>
@@ -153,114 +214,155 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 2. Stats Bar */}
-      <section className="bg-brand-navy-950 text-white py-12 border-y border-brand-navy-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-brand opacity-5 pointer-events-none" />
-
-        <Container className="relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
-            <div className="space-y-1 pt-4 md:pt-0">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold font-mono text-brand-cyan-400">
-                {siteConfig.stats.projectsDelivered}
-              </div>
-              <div className="text-xs sm:text-sm text-brand-slate-300 font-medium">
-                Projects Delivered
-              </div>
+      {/* 2. Stats Bar (REBUILD: Manus-referenced pale treatment per Section 4.1) */}
+      <section className="bg-brand-blue-50/40 border-y border-brand-slate-200/80 py-8">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            {/* Intro statement */}
+            <div className="lg:col-span-4 text-base sm:text-lg font-bold tracking-tight text-brand-slate-900 leading-snug">
+              We turn complex technology into{" "}
+              <span className="text-brand-blue-600">business advantage.</span>
             </div>
 
-            <div className="space-y-1 pt-4 md:pt-0">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold font-mono text-white">
-                {siteConfig.stats.happyClients}
+            {/* 4 Stats Columns */}
+            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 divide-x divide-brand-slate-200/90">
+              <div className="pl-4 first:pl-0 space-y-0.5">
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-brand-blue-600">
+                  {siteConfig.stats.projectsDelivered}
+                </div>
+                <div className="text-xs text-brand-slate-500 font-medium">
+                  Projects Delivered
+                </div>
               </div>
-              <div className="text-xs sm:text-sm text-brand-slate-300 font-medium">
-                Happy Clients
-              </div>
-            </div>
 
-            <div className="space-y-1 pt-4 md:pt-0">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold font-mono text-brand-cyan-400">
-                {siteConfig.stats.yearsOfImpact}
+              <div className="pl-4 space-y-0.5">
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-brand-blue-600">
+                  {siteConfig.stats.happyClients}
+                </div>
+                <div className="text-xs text-brand-slate-500 font-medium">
+                  Happy Clients
+                </div>
               </div>
-              <div className="text-xs sm:text-sm text-brand-slate-300 font-medium">
-                Years of Impact
-              </div>
-            </div>
 
-            <div className="space-y-1 pt-4 md:pt-0">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold font-mono text-white">
-                Across {siteConfig.stats.countriesCovered}
+              <div className="pl-4 space-y-0.5">
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-brand-blue-600">
+                  {siteConfig.stats.yearsOfImpact}
+                </div>
+                <div className="text-xs text-brand-slate-500 font-medium">
+                  Years of Impact
+                </div>
               </div>
-              <div className="text-xs sm:text-sm text-brand-slate-300 font-medium">
-                Countries Covered
+
+              <div className="pl-4 space-y-0.5">
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-brand-blue-600">
+                  {siteConfig.stats.countriesCovered}
+                </div>
+                <div className="text-xs text-brand-slate-500 font-medium">
+                  Countries Covered
+                </div>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 3. "What We Do" — 4 Cards */}
-      <section>
+      {/* 3. "What We Do" (REBUILD: Manus-referenced 4-card grid per Section 4.2) */}
+      <section className="py-6">
         <Container>
-          <div className="space-y-12">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-brand-slate-200 pb-6">
-              <div>
-                <Eyebrow>CORE PRACTICE AREAS</Eyebrow>
-                <TwoToneHeading
-                  text="What We"
-                  highlightText="Do"
-                  as="h2"
-                />
-              </div>
-              <Button href="/services" variant="secondary" size="sm" showArrow>
-                View All 5 Services
-              </Button>
+          <div className="space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <Eyebrow>WHAT WE DO</Eyebrow>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-slate-900">
+                End-to-end technology solutions{" "}
+                <span className="text-brand-blue-600">
+                  for modern businesses
+                </span>
+              </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {whatWeDoCards.map((card) => {
-                const Icon = card.icon;
-
+                const IconComponent = card.icon;
                 return (
-                  <div
-                    key={card.number}
-                    className="group flex flex-col justify-between p-7 rounded-3xl bg-white border border-brand-slate-200 shadow-card-subtle hover:shadow-card-hover hover:border-brand-blue-300 transition-all duration-300 space-y-6"
+                  <Link
+                    key={card.slug}
+                    href={card.href}
+                    className="group p-6 rounded-2xl bg-white border border-brand-slate-200/90 shadow-card-subtle hover:shadow-card-hover hover:border-brand-blue-300 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
                   >
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-mono font-bold text-brand-blue-600">
-                          {card.number}
-                        </span>
-                        <div className="w-10 h-10 rounded-2xl bg-brand-blue-50 text-brand-blue-600 flex items-center justify-center group-hover:bg-brand-blue-600 group-hover:text-white transition-colors duration-200">
-                          <Icon className="w-5 h-5" />
-                        </div>
+                    <div>
+                      <div className="w-11 h-11 rounded-xl bg-brand-blue-50 text-brand-blue-600 group-hover:bg-brand-blue-600 group-hover:text-white flex items-center justify-center transition-colors mb-4">
+                        <IconComponent className="w-5 h-5" />
                       </div>
-
-                      <h3 className="text-xl font-bold text-brand-slate-900 group-hover:text-brand-blue-600 transition-colors">
+                      <h3 className="text-base font-bold text-brand-slate-900 group-hover:text-brand-blue-600 transition-colors mb-2">
                         {card.title}
                       </h3>
-
-                      <p className="text-xs sm:text-sm text-brand-slate-600 leading-relaxed">
+                      <p className="text-xs text-brand-slate-500 leading-relaxed">
                         {card.description}
                       </p>
-
-                      <div className="pt-2 border-t border-brand-slate-100 space-y-1.5">
-                        {card.capabilities.map((cap, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-xs text-brand-slate-700">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-600 shrink-0" />
-                            <span>{cap}</span>
-                          </div>
-                        ))}
-                      </div>
                     </div>
 
-                    <div className="pt-4 border-t border-brand-slate-100">
-                      <Link
-                        href={card.href}
-                        className="text-xs font-bold text-brand-blue-600 group-hover:text-brand-blue-700 flex items-center gap-1.5"
-                      >
-                        Explore Capability <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                      </Link>
+                    <div className="pt-4 mt-4 border-t border-brand-slate-100 flex items-center gap-1.5 text-xs font-bold text-brand-blue-600">
+                      <span>Explore</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* 4. "From idea to infrastructure" (REBUILD: Manus Process Section per Section 4.2) */}
+      <section className="bg-brand-navy-950 text-white py-16 sm:py-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-brand-blue-600/15 blur-3xl pointer-events-none" />
+
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            {/* Left Header */}
+            <div className="lg:col-span-4 space-y-4">
+              <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan-400">
+                WHAT WE BUILD
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-tight">
+                From idea to{" "}
+                <span className="text-brand-cyan-400">infrastructure.</span>
+              </h2>
+              <p className="text-xs sm:text-sm text-brand-slate-300 leading-relaxed">
+                We architect and build secure, scalable systems that power
+                businesses and products across industries.
+              </p>
+              <div className="pt-2">
+                <Button
+                  href="/work"
+                  variant="secondary"
+                  size="md"
+                  className="border-white/30 text-white hover:bg-white/10"
+                  showArrow
+                >
+                  See How We Work
+                </Button>
+              </div>
+            </div>
+
+            {/* Right 4 Horizontal Process Steps with Dashed Line */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+              {processSteps.map((step, idx) => {
+                const StepIcon = step.icon;
+                return (
+                  <div key={idx} className="relative space-y-3">
+                    <span className="text-[11px] font-mono font-bold text-brand-cyan-400">
+                      {step.step}
+                    </span>
+                    <div className="w-10 h-10 rounded-full border border-brand-blue-400/40 text-brand-cyan-300 flex items-center justify-center bg-brand-blue-900/30">
+                      <StepIcon className="w-4 h-4" />
+                    </div>
+                    <h4 className="text-sm font-bold text-white">
+                      {step.title}
+                    </h4>
+                    <p className="text-xs text-brand-slate-300 leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 );
               })}
@@ -269,194 +371,127 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 4. "From Idea to Infrastructure" — 4-Step Horizontal Process */}
-      <section className="bg-brand-slate-50/70 py-16 sm:py-24 border-y border-brand-slate-200/80">
+      {/* 5. "Solutions we're proud to have built" (REBUILD: Manus Featured Projects per Section 4.2) */}
+      <section className="py-6">
         <Container>
-          <div className="space-y-12">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <Eyebrow>OUR METHODOLOGY</Eyebrow>
-              <TwoToneHeading
-                text="From idea to"
-                highlightText="infrastructure."
-                as="h2"
-                align="center"
-              />
-              <p className="text-sm sm:text-base text-brand-slate-600">
-                A battle-tested engineering methodology designed to move from strategic concept to mission-critical execution.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {processSteps.map((step, idx) => (
-                <div
-                  key={idx}
-                  className="relative p-7 rounded-3xl bg-white border border-brand-slate-200 shadow-card-subtle space-y-4"
-                >
-                  <div className="w-12 h-12 rounded-2xl bg-brand-blue-50 text-brand-blue-600 font-mono font-bold text-lg flex items-center justify-center">
-                    {step.step}
-                  </div>
-                  <h3 className="text-lg font-bold text-brand-slate-900">{step.title}</h3>
-                  <p className="text-xs sm:text-sm text-brand-slate-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 5. "Solutions We're Proud to Have Built" — 2 Featured Case Studies */}
-      <section>
-        <Container>
-          <div className="space-y-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-brand-slate-200 pb-6">
+          <div className="space-y-8">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <Eyebrow>FEATURED WORK</Eyebrow>
-                <TwoToneHeading
-                  text="Solutions we're proud to have"
-                  highlightText="built."
-                  as="h2"
-                />
+                <Eyebrow>WHAT WE BUILD</Eyebrow>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-slate-900">
+                  Solutions we’re proud to have built
+                </h2>
               </div>
-              <Button href="/work" variant="secondary" size="sm" showArrow>
-                View All Case Studies
-              </Button>
+              <Link
+                href="/work"
+                className="text-xs font-bold text-brand-blue-600 hover:underline flex items-center gap-1 shrink-0"
+              >
+                View all projects <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {featuredProjects.map((proj) => (
-                <div
-                  key={proj.slug}
-                  className="p-8 sm:p-10 rounded-3xl bg-white border border-brand-slate-200 shadow-card-subtle flex flex-col justify-between space-y-6 hover:shadow-card-hover hover:border-brand-blue-200 transition-all duration-300"
+            {/* 2-Card Featured Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {featuredProjects.map((project) => (
+                <article
+                  key={project.slug}
+                  className="rounded-2xl border border-brand-slate-200 bg-white overflow-hidden shadow-card-subtle hover:shadow-card-hover hover:border-brand-blue-300 transition-all duration-200 flex flex-col justify-between group"
                 >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-blue-600 bg-brand-blue-50 px-3 py-1 rounded-lg border border-brand-blue-100">
-                        {proj.category}
-                      </span>
-                      <span className="text-xs font-mono text-brand-slate-400 font-medium">
-                        {proj.client}
-                      </span>
-                    </div>
+                  {/* IMAGE SLOT: project_card_thumbnail (placeholder slot) */}
+                  <div className="h-48 bg-gradient-to-br from-brand-slate-100 via-brand-blue-50/50 to-brand-slate-200 border-b border-brand-slate-100 flex flex-col items-center justify-center p-6 text-center relative">
+                    <span className="px-3 py-1 rounded-full bg-white/90 shadow-sm text-brand-blue-600 text-[11px] font-mono font-bold uppercase tracking-wider border border-brand-blue-100">
+                      {project.industry} // {project.category}
+                    </span>
+                  </div>
 
-                    <h3 className="text-2xl font-bold tracking-tight text-brand-slate-900 leading-snug">
-                      {proj.title}
+                  <div className="p-6 space-y-3 relative">
+                    <span className="text-[10px] font-mono font-bold text-brand-blue-600 uppercase tracking-widest block">
+                      {project.category}
+                    </span>
+                    <h3 className="text-lg font-bold text-brand-slate-900 group-hover:text-brand-blue-600 transition-colors">
+                      {project.title}
                     </h3>
-
-                    <p className="text-sm text-brand-slate-600 leading-relaxed">
-                      {proj.description}
+                    <p className="text-xs text-brand-slate-600 line-clamp-2 leading-relaxed">
+                      {project.description}
                     </p>
 
-                    {/* Stats Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-brand-slate-100">
-                      {proj.stats.slice(0, 3).map((st, sIdx) => (
-                        <div key={sIdx} className="p-3 rounded-2xl bg-brand-slate-50 border border-brand-slate-100">
-                          <div className="text-xl font-bold font-mono text-brand-blue-600">
-                            {st.value}
+                    {/* Metrics Row */}
+                    <div className="pt-3 border-t border-brand-slate-100 flex flex-wrap gap-4 items-center justify-between">
+                      <div className="flex gap-4">
+                        {project.stats.slice(0, 2).map((stat, sIdx) => (
+                          <div key={sIdx} className="space-y-0.5">
+                            <span className="text-sm font-extrabold font-mono text-brand-slate-900 block">
+                              {stat.value}
+                            </span>
+                            <span className="text-[10px] text-brand-slate-500 block">
+                              {stat.label}
+                            </span>
                           </div>
-                          <div className="text-[11px] text-brand-slate-500 line-clamp-1 mt-0.5">
-                            {st.label}
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
+
+                      <Link
+                        href="/work"
+                        className="w-8 h-8 rounded-full border border-brand-slate-200 bg-white hover:bg-brand-blue-600 hover:text-white hover:border-brand-blue-600 flex items-center justify-center text-brand-blue-600 transition-colors shrink-0"
+                        aria-label={`View details for ${project.title}`}
+                      >
+                        <ArrowUpRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
-
-                  <div className="pt-4 border-t border-brand-slate-100 flex items-center justify-between">
-                    <div className="flex flex-wrap gap-1.5">
-                      {proj.techTags.slice(0, 4).map((tag, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="text-[10px] font-mono px-2.5 py-1 rounded bg-brand-slate-100 text-brand-slate-700"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <Link
-                      href="/work"
-                      className="text-xs font-bold text-brand-blue-600 hover:underline inline-flex items-center gap-1 shrink-0"
-                    >
-                      Read Case Study <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 6. "Why ByteForce" — 4-Icon Value Row */}
-      <section className="bg-brand-navy-950 text-white py-16 sm:py-24 border-y border-brand-navy-800 relative overflow-hidden">
-        <Container className="relative z-10">
-          <div className="space-y-12">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-cyan-400">
-                OUR ADVANTAGE
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">
-                Why Partner With <span className="text-brand-cyan-400">ByteForce</span>
+      {/* 6. "Why ByteForce" (REBUILD: Manus Value Strip per Section 4.2) */}
+      <section className="py-8 bg-brand-slate-50/50 border-y border-brand-slate-200/80">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left Statement */}
+            <div className="lg:col-span-4 space-y-2">
+              <Eyebrow>WHY BYTEFORCE</Eyebrow>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-slate-900 leading-tight">
+                We don’t just deliver software.
+                <br />
+                <span className="text-brand-blue-600">
+                  We build lasting impact.
+                </span>
               </h2>
-              <p className="text-sm sm:text-base text-brand-slate-300">
-                We combine deep African context with uncompromised engineering excellence.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-7 rounded-3xl bg-white/5 border border-white/10 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cyan-400/10 text-brand-cyan-300 flex items-center justify-center">
-                  <Rocket className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold text-white">Business First</h3>
-                <p className="text-xs sm:text-sm text-brand-slate-300 leading-relaxed">
-                  We align technical decisions with your commercial metrics, cash flows, and growth targets.
-                </p>
-              </div>
-
-              <div className="p-7 rounded-3xl bg-white/5 border border-white/10 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cyan-400/10 text-brand-cyan-300 flex items-center justify-center">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold text-white">Built to Last</h3>
-                <p className="text-xs sm:text-sm text-brand-slate-300 leading-relaxed">
-                  Scalable, maintainable, and secure architectures that stand up to real production stress.
-                </p>
-              </div>
-
-              <div className="p-7 rounded-3xl bg-white/5 border border-white/10 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cyan-400/10 text-brand-cyan-300 flex items-center justify-center">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold text-white">Collaborative</h3>
-                <p className="text-xs sm:text-sm text-brand-slate-300 leading-relaxed">
-                  We work seamlessly alongside your executive team with radical transparency.
-                </p>
-              </div>
-
-              <div className="p-7 rounded-3xl bg-white/5 border border-white/10 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-brand-cyan-400/10 text-brand-cyan-300 flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold text-white">Impact Driven</h3>
-                <p className="text-xs sm:text-sm text-brand-slate-300 leading-relaxed">
-                  Delivering clear efficiency gains, automated processes, and measurable bottom-line value.
-                </p>
-              </div>
+            {/* Right 4 Values */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {whyByteforceValues.map((val, idx) => {
+                const IconComponent = val.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="space-y-2 pl-4 border-l-2 border-brand-blue-600/30"
+                  >
+                    <IconComponent className="w-5 h-5 text-brand-blue-600" />
+                    <h4 className="text-sm font-bold text-brand-slate-900">
+                      {val.title}
+                    </h4>
+                    <p className="text-xs text-brand-slate-500 leading-relaxed">
+                      {val.description}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 7. Reusable CTA Banner */}
+      {/* 7. Shared CTA Banner */}
       <CtaBanner
-        eyebrow="LET'S BUILD WHAT'S NEXT"
-        heading="Let's build what's next,"
-        highlightWord="together."
-        subtext="Turn ambitious digital concepts into secure, high-performing software that transforms your market position."
-        buttonLabel="Start a Project"
+        eyebrow="READY TO BUILD SOMETHING GREAT?"
+        heading="Let’s build what’s next, together."
+        subtext="Tell us about your challenge and let’s turn it into technology that creates real results."
+        buttonLabel="Start a Conversation"
         buttonHref="/contact"
       />
     </div>

@@ -27,10 +27,10 @@ export function TwoToneHeading({
   };
 
   const defaultStyles = {
-    h1: "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.12]",
-    h2: "text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight leading-[1.2]",
-    h3: "text-2xl sm:text-3xl font-bold tracking-tight leading-snug",
-    h4: "text-xl font-bold tracking-tight",
+    h1: "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.12]",
+    h2: "text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight leading-[1.2]",
+    h3: "text-xl sm:text-2xl font-bold tracking-tight leading-snug",
+    h4: "text-lg font-bold tracking-tight leading-snug",
   };
 
   const baseTextColor = theme === "dark" ? "text-white" : "text-brand-slate-900";

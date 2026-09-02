@@ -46,10 +46,10 @@ export function generateMetadata({ params }: SolutionPageProps): Metadata {
   }
 
   return {
-    title: `${solution.name} Solutions — ByteForce Africa`,
+    title: `${solution.name} Solutions — ByteForce Global`,
     description: solution.shortDescription,
     openGraph: {
-      title: `${solution.name} Solutions | ByteForce Africa`,
+      title: `${solution.name} Solutions | ByteForce Global`,
       description: solution.heroDescription,
     },
   };

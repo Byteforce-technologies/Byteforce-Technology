@@ -317,111 +317,120 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Hamburger Button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <Button
-              href="/contact"
-              variant="primary"
-              size="sm"
-              className="text-xs px-3 py-1.5 sm:flex"
-            >
-              Let&apos;s Talk
-            </Button>
+          <div className="flex items-center lg:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-brand-slate-700 hover:text-brand-blue-600 hover:bg-brand-slate-100 transition-colors"
+              className="p-2.5 rounded-xl text-brand-slate-800 hover:text-brand-blue-600 hover:bg-brand-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 transition-transform duration-200" />
+              ) : (
+                <Menu className="w-6 h-6 transition-transform duration-200" />
+              )}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Navigation Backdrop & 2/3 Height Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-[73px] bottom-0 bg-white/98 backdrop-blur-xl z-40 overflow-y-auto px-4 py-6 border-t border-brand-slate-200 animate-in fade-in slide-in-from-top-4 duration-200">
-            <div className="space-y-4 max-w-lg mx-auto pb-12">
-              {/* Services Accordion */}
-              <div className="border border-brand-slate-200 rounded-2xl overflow-hidden bg-brand-slate-50/50">
-                <button
-                  type="button"
-                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="w-full flex items-center justify-between p-4 text-base font-semibold text-brand-slate-900"
-                >
-                  <span>Services</span>
-                  <ChevronDown
-                    className={cn(
-                      "w-5 h-5 text-brand-slate-500 transition-transform duration-200",
-                      mobileServicesOpen ? "rotate-180 text-brand-blue-600" : ""
-                    )}
-                  />
-                </button>
-                {mobileServicesOpen && (
-                  <div className="px-4 pb-4 space-y-2 border-t border-brand-slate-200 pt-3 bg-white">
-                    <Link
-                      href="/services"
-                      className="block text-xs font-bold uppercase tracking-wider text-brand-blue-600 mb-2"
-                    >
-                      → Services Overview
-                    </Link>
-                    {servicesNavList.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-brand-blue-50 text-sm font-medium text-brand-slate-800"
-                      >
-                        <item.icon className="w-4 h-4 text-brand-blue-600" />
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+          <>
+            {/* Backdrop overlay */}
+            <div
+              className="lg:hidden fixed inset-0 top-[65px] bg-brand-slate-950/40 backdrop-blur-sm z-40 animate-in fade-in duration-200"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden="true"
+            />
 
-              {/* Solutions Accordion */}
-              <div className="border border-brand-slate-200 rounded-2xl overflow-hidden bg-brand-slate-50/50">
-                <button
-                  type="button"
-                  onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                  className="w-full flex items-center justify-between p-4 text-base font-semibold text-brand-slate-900"
-                >
-                  <span>Solutions</span>
-                  <ChevronDown
-                    className={cn(
-                      "w-5 h-5 text-brand-slate-500 transition-transform duration-200",
-                      mobileSolutionsOpen ? "rotate-180 text-brand-blue-600" : ""
-                    )}
-                  />
-                </button>
-                {mobileSolutionsOpen && (
-                  <div className="px-4 pb-4 space-y-2 border-t border-brand-slate-200 pt-3 bg-white">
-                    <Link
-                      href="/solutions"
-                      className="block text-xs font-bold uppercase tracking-wider text-brand-blue-600 mb-2"
-                    >
-                      → Solutions Overview
-                    </Link>
-                    {solutionsNavList.map((item) => (
+            {/* 2/3 Page Height Mobile Drawer */}
+            <div className="lg:hidden fixed inset-x-0 top-[65px] h-[66vh] max-h-[66vh] bg-white z-50 overflow-y-auto px-5 py-6 border-b border-brand-slate-200 shadow-2xl animate-in slide-in-from-top-4 duration-200 flex flex-col justify-between">
+              <div className="space-y-3 max-w-md mx-auto w-full">
+                {/* Services Accordion */}
+                <div className="border border-brand-slate-200 rounded-xl overflow-hidden bg-brand-slate-50/60">
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className="w-full flex items-center justify-between p-3.5 text-sm font-semibold text-brand-slate-900"
+                  >
+                    <span>Services</span>
+                    <ChevronDown
+                      className={cn(
+                        "w-4 h-4 text-brand-slate-500 transition-transform duration-200",
+                        mobileServicesOpen ? "rotate-180 text-brand-blue-600" : ""
+                      )}
+                    />
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="px-3 pb-3 space-y-1 border-t border-brand-slate-200 pt-2 bg-white">
                       <Link
-                        key={item.href}
-                        href={item.href}
-                        className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-brand-blue-50 text-sm font-medium text-brand-slate-800"
+                        href="/services"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-xs font-bold uppercase tracking-wider text-brand-blue-600 p-2"
                       >
-                        <item.icon className="w-4 h-4 text-brand-blue-600" />
-                        {item.name}
+                        → All Services Overview
                       </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                      {servicesNavList.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-brand-blue-50 text-xs font-medium text-brand-slate-800"
+                        >
+                          <item.icon className="w-4 h-4 text-brand-blue-600 shrink-0" />
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
 
-              {/* Direct Mobile Links */}
-              <div className="space-y-2 pt-2">
+                {/* Solutions Accordion */}
+                <div className="border border-brand-slate-200 rounded-xl overflow-hidden bg-brand-slate-50/60">
+                  <button
+                    type="button"
+                    onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                    className="w-full flex items-center justify-between p-3.5 text-sm font-semibold text-brand-slate-900"
+                  >
+                    <span>Solutions</span>
+                    <ChevronDown
+                      className={cn(
+                        "w-4 h-4 text-brand-slate-500 transition-transform duration-200",
+                        mobileSolutionsOpen ? "rotate-180 text-brand-blue-600" : ""
+                      )}
+                    />
+                  </button>
+                  {mobileSolutionsOpen && (
+                    <div className="px-3 pb-3 space-y-1 border-t border-brand-slate-200 pt-2 bg-white">
+                      <Link
+                        href="/solutions"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-xs font-bold uppercase tracking-wider text-brand-blue-600 p-2"
+                      >
+                        → All Solutions Overview
+                      </Link>
+                      {solutionsNavList.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-brand-blue-50 text-xs font-medium text-brand-slate-800"
+                        >
+                          <item.icon className="w-4 h-4 text-brand-blue-600 shrink-0" />
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Direct Vertical Mobile Links */}
                 <Link
                   href="/work"
+                  onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "block p-4 rounded-2xl text-base font-semibold transition-colors",
+                    "block px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-colors",
                     isActive("/work")
                       ? "bg-brand-blue-50 text-brand-blue-600"
                       : "text-brand-slate-900 hover:bg-brand-slate-100"
@@ -431,8 +440,9 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/about"
+                  onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "block p-4 rounded-2xl text-base font-semibold transition-colors",
+                    "block px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-colors",
                     isActive("/about")
                       ? "bg-brand-blue-50 text-brand-blue-600"
                       : "text-brand-slate-900 hover:bg-brand-slate-100"
@@ -442,8 +452,9 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/insights"
+                  onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "block p-4 rounded-2xl text-base font-semibold transition-colors",
+                    "block px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-colors",
                     isActive("/insights")
                       ? "bg-brand-blue-50 text-brand-blue-600"
                       : "text-brand-slate-900 hover:bg-brand-slate-100"
@@ -453,20 +464,21 @@ export function Navbar() {
                 </Link>
               </div>
 
-              {/* Mobile CTA */}
-              <div className="pt-4">
+              {/* Mobile Primary CTA */}
+              <div className="pt-4 border-t border-brand-slate-100 max-w-md mx-auto w-full">
                 <Button
                   href="/contact"
                   variant="primary"
-                  size="lg"
+                  size="md"
                   className="w-full justify-center text-center shadow-lg"
                   showArrow
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Let&apos;s Talk
                 </Button>
               </div>
             </div>
-          </div>
+          </>
         )}
       </Container>
     </header>

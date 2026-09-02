@@ -62,7 +62,7 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="ByteForce Africa on LinkedIn"
+                aria-label="ByteForce Global on LinkedIn"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-blue-600 hover:text-white border border-white/10 flex items-center justify-center text-brand-slate-400 transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
@@ -71,7 +71,7 @@ export function Footer() {
                 href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="ByteForce Africa on X"
+                aria-label="ByteForce Global on X"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-blue-600 hover:text-white border border-white/10 flex items-center justify-center text-brand-slate-400 transition-colors"
               >
                 <XTwitterIcon className="w-3.5 h-3.5" />
@@ -80,7 +80,7 @@ export function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="ByteForce Africa on GitHub"
+                aria-label="ByteForce Global on GitHub"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-blue-600 hover:text-white border border-white/10 flex items-center justify-center text-brand-slate-400 transition-colors"
               >
                 <Github className="w-4 h-4" />
@@ -158,10 +158,10 @@ export function Footer() {
               <li className="flex items-start gap-2.5 text-sm text-brand-slate-400">
                 <Mail className="w-4 h-4 text-brand-cyan-400 shrink-0 mt-0.5" />
                 <a
-                  href="mailto:hello@byteforce.africa"
+                  href="mailto:hello@byteforce.global"
                   className="hover:text-brand-cyan-400 transition-colors break-all"
                 >
-                  hello@byteforce.africa
+                  hello@byteforce.global
                 </a>
               </li>
               <li className="flex items-start gap-2.5 text-sm text-brand-slate-400">
@@ -179,7 +179,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-slate-500">
-          <p>© {currentYear} ByteForce Africa. All rights reserved.</p>
+          <p>© {currentYear} ByteForce Global. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy-policy"

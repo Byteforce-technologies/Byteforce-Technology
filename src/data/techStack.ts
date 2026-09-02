@@ -1,5 +1,5 @@
 /**
- * ByteForce Africa - Tech Stack Directory
+ * ByteForce Global - Tech Stack Directory
  * 
  * NOTE: This file represents demonstrated engineering capabilities and technologies
  * utilized across client solutions. It does not imply that every technology is used
